@@ -1,0 +1,16 @@
+.venv/
+data/*
+!data/demo_jobs.csv
+!data/descriptions_demo/
+output/
+profile/profile.yaml
+profile/master_resume.md
+CLAUDE.md
+docs/superpowers/
+__pycache__/
+.DS_Store
+
+# browser session dumps + worker logs (may contain personal data from real runs)
+.playwright-mcp/
+logs/
+.env

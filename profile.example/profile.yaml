@@ -1,0 +1,131 @@
+# ============================================================
+# APPLICATION PROFILE — everything the agent needs to fill
+# job application forms on your behalf.
+#
+# This is the DEMO/EXAMPLE profile for the fictional candidate
+# "Alex Doe". Copy this file to profile/profile.yaml and fill
+# in your own information before your first application.
+# ============================================================
+
+contact:
+  first_name: Alex
+  last_name: Doe
+  full_name: Alex Jordan Doe
+  email: alex.doe@example.com
+  phone: "(555) 867-5309"
+  phone_country_code: "+1"
+  address_line1: 42 Maple Avenue, Apt 7
+  city: Austin
+  state: TX
+  zip: "78701"
+  country: United States
+  linkedin: https://www.linkedin.com/in/alexdoe-demo/
+  portfolio: https://alexdoe-demo.github.io/
+  github: https://github.com/alexdoe-demo
+
+# ---------- Job search preferences ----------
+search:
+  target_titles:
+    - AI Engineer
+    - Machine Learning Engineer
+    - Data Scientist
+    - MLOps Engineer
+    - Data Engineer
+    - Agentic AI Engineer
+    - GenAI Engineer
+    - Full-Stack AI Engineer
+    - Software Engineer (AI/ML)
+  seniority: [entry, associate, mid]   # ~2 yrs experience
+  work_mode_preference: remote_first   # remote preferred, open to relocate
+  locations: ["Remote", "United States"]
+  min_base_salary_usd: 90000
+  posted_within_hours: 72              # default freshness window
+  exclude_keywords: [staff, principal, director, "10+ years", "8+ years", clearance, "TS/SCI"]
+
+# ---------- Work authorization ----------
+work_authorization:
+  status: US Citizen
+  authorized_to_work_us: true          # "Are you legally authorized to work in the US?" -> Yes
+  require_sponsorship: false           # "Will you now or in the future require sponsorship?" -> No
+  visa_status_label: "US Citizen"
+  notes: >
+    Demo candidate is a US citizen and does not require sponsorship.
+    Replace these values with your actual work authorization status.
+
+# ---------- Standard screening answers ----------
+screening_defaults:
+  willing_to_relocate: true
+  open_to_remote: true
+  open_to_hybrid: true
+  open_to_onsite: true
+  earliest_start: "2 weeks from offer"
+  salary_expectation_base: "100,000 USD (negotiable)"
+  salary_expectation_strategy: >
+    Prefer "negotiable" or leave blank when allowed; give the number above only
+    when the form forces a value.
+  years_experience_total: 2
+  years_python: 3
+  years_sql: 3
+  years_aws: 1
+  years_ml: 2
+  worked_for_this_company_before: false
+  referred_by: ""
+  how_did_you_hear: "Company careers site"
+  over_18: true
+  agree_to_background_check: true
+  agree_to_drug_test: true
+
+# ---------- EEO / voluntary self-identification ----------
+eeo:
+  policy: decline                # use "answer" to provide values below, or "decline" for all optional sections
+  gender: ""
+  hispanic_or_latino: false
+  race: ""
+  veteran_status: "I am not a protected veteran"
+  disability_status: "No, I do not have a disability"
+
+# ---------- Education (as forms expect it) ----------
+education:
+  - school: State University of Demo City
+    degree: Master of Science
+    field: Data Science
+    start: 2022-09
+    end: 2024-05
+    gpa: "3.85"
+    location: Demo City, TX
+  - school: Demo City College of Technology
+    degree: Bachelor of Science
+    field: Computer Science
+    start: 2018-09
+    end: 2022-05
+    gpa: "3.70"
+    location: Demo City, TX
+
+# ---------- Employment history (as forms expect it) ----------
+employment:
+  - company: Acme Analytics
+    title: Data Science Engineer
+    start: 2024-06
+    end: present
+    location: Austin, TX (Remote)
+    may_contact: true
+  - company: Demo University
+    title: Graduate Research Assistant
+    start: 2022-09
+    end: 2024-05
+    location: Demo City, TX
+    may_contact: true
+  - company: Bright Data Systems
+    title: Junior Data Analyst (Intern)
+    start: 2022-01
+    end: 2022-05
+    location: Remote
+    may_contact: false
+
+# ---------- References ----------
+references: []                  # add {name, title, company, email, phone} entries if asked
+
+# ---------- Account credentials policy ----------
+accounts:
+  signup_email: alex.doe@example.com
+  password_file: ../data/portal_accounts.csv   # site,email,password,created_date

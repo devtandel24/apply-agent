@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Career Agent</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand">⚙️ Career Agent <span class="sub">agentic job-application copilot</span></div>
+  <div class="stats" id="stats"></div>
+  <button id="findJobsBtn" class="primary">🔍 Find Jobs</button>
+</header>
+
+<nav>
+  <button class="tab active" data-tab="approvals">Needs You <span id="approvalBadge" class="badge hidden">0</span></button>
+  <button class="tab" data-tab="jobs">Jobs</button>
+  <button class="tab" data-tab="applications">Applications</button>
+  <button class="tab" data-tab="resumes">Resumes</button>
+  <button class="tab" data-tab="activity">Activity</button>
+  <button class="tab" data-tab="profile">Profile</button>
+</nav>
+
+<main>
+  <section id="tab-approvals" class="tabpane active">
+    <div id="approvalsList"></div>
+    <div id="approvalsEmpty" class="empty hidden">
+      <h3>Nothing needs your approval right now 🎉</h3>
+      <p>When the agent hits a gate — job shortlist, resume gap questions, or the
+      final Submit on an application — a card appears here and you get a macOS notification.</p>
+    </div>
+  </section>
+
+  <section id="tab-jobs" class="tabpane">
+    <div class="toolbar">
+      <select id="statusFilter">
+        <option value="shortlist">Shortlist (A/B, scored)</option>
+        <option value="approved">Approved / Tailoring</option>
+        <option value="tailored">Tailored — ready to apply</option>
+        <option value="applied">Applied</option>
+        <option value="all">Everything</option>
+      </select>
+      <input id="searchBox" type="search" placeholder="filter by title or company…">
+      <button id="approveSelectedBtn" class="primary hidden">✅ Approve selected → tailor</button>
+    </div>
+    <div id="jobsList"></div>
+  </section>
+
+  <section id="tab-applications" class="tabpane">
+    <p class="hint">Every application and where it stands. Move a card forward when you
+    hear back — interviews, offers, rejections — so this stays your single tracker.</p>
+    <div id="applicationsList"></div>
+  </section>
+
+  <section id="tab-resumes" class="tabpane">
+    <p class="hint">Every tailored resume that has been generated, newest first.
+    Click to preview the PDF.</p>
+    <div id="resumesList"></div>
+  </section>
+
+  <section id="tab-activity" class="tabpane">
+    <div class="toolbar">
+      <button id="pauseBtn" class="primary"></button>
+      <span class="hint" style="margin:0">Pause stops new tasks from starting. ✕ cancels a
+      queued task, or kills a running one immediately (no tokens wasted).</span>
+    </div>
+    <div id="tasksList"></div>
+  </section>
+
+  <section id="tab-profile" class="tabpane">
+    <div class="toolbar">
+      <select id="profileFile">
+        <option value="master_resume.md">master_resume.md — source of truth</option>
+        <option value="profile.yaml">profile.yaml — form answers</option>
+      </select>
+      <button id="saveProfileBtn" class="primary">💾 Save</button>
+      <span id="profileSavedMsg" class="saved hidden">saved ✓</span>
+    </div>
+    <textarea id="profileEditor" spellcheck="false"></textarea>
+  </section>
+</main>
+
+<div id="drawer" class="hidden">
+  <div class="drawer-head">
+    <h2 id="drawerTitle"></h2>
+    <button id="drawerClose">✕</button>
+  </div>
+  <div id="drawerBody"></div>
+</div>
+<div id="overlay" class="hidden"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

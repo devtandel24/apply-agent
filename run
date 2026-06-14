@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+# First-run setup: seed real working files from the demo if they don't exist yet.
+mkdir -p profile data
+[ -f profile/profile.yaml ] || cp profile.example/profile.yaml profile/profile.yaml
+[ -f profile/master_resume.md ] || cp profile.example/master_resume.md profile/master_resume.md
+[ -f data/jobs.csv ] || cp data/demo_jobs.csv data/jobs.csv
+exec env CAREER_UI_MODE=1 .venv/bin/python app/server.py

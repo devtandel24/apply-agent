@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+  ATS-friendly resume template.
+  The tailor skill copies this file, replaces the {{...}} placeholders with
+  job-specific content selected from profile/master_resume.md, then renders
+  to PDF with scripts/make_pdf.py.
+  Rules: single column, no tables, no images, standard headings — parses
+  cleanly in Workday/Greenhouse/Lever/iCIMS resume parsers.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{NAME}} — Resume</title>
+<style>
+  @page { size: Letter; margin: 0.55in 0.6in; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Helvetica Neue", Calibri, Arial, sans-serif;
+    font-size: 10.2pt; line-height: 1.32; color: #1a1a1a; margin: 0;
+  }
+  h1 { font-size: 19pt; margin: 0 0 2pt; letter-spacing: .5pt; }
+  .contact { font-size: 9.5pt; margin-bottom: 8pt; color: #333; }
+  .contact a { color: #0b57d0; text-decoration: none; }
+  h2 {
+    font-size: 11pt; text-transform: uppercase; letter-spacing: 1pt;
+    border-bottom: 1.2px solid #1a1a1a; padding-bottom: 2pt;
+    margin: 10pt 0 5pt;
+  }
+  .entry { margin-bottom: 7pt; }
+  .entry-head { display: flex; justify-content: space-between; font-weight: 600; }
+  .entry-sub  { display: flex; justify-content: space-between; font-style: italic; font-size: 9.7pt; }
+  ul { margin: 3pt 0 0; padding-left: 16pt; }
+  li { margin-bottom: 1.5pt; }
+  .skills p { margin: 1.5pt 0; }
+  .summary { margin: 0; }
+</style>
+</head>
+<body>
+
+<h1>{{NAME}}</h1>
+<div class="contact">
+  {{PHONE}} | <a href="mailto:{{EMAIL}}">{{EMAIL}}</a> |
+  <a href="{{LINKEDIN_URL}}">LinkedIn</a> | <a href="{{PORTFOLIO_URL}}">Portfolio</a> | {{LOCATION}}
+</div>
+
+<h2>Professional Summary</h2>
+<p class="summary">{{SUMMARY — rewrite per job: mirror the job title and 3-4 keywords from the JD, keep it factual}}</p>
+
+<h2>Skills</h2>
+<div class="skills">
+  {{SKILLS — reorder categories so the JD's must-have skills appear first; only list skills present in master_resume.md}}
+</div>
+
+<h2>Work Experience</h2>
+<div class="entry">
+  <div class="entry-head"><span>{{TITLE}} | {{COMPANY}}</span><span>{{DATES}}</span></div>
+  <ul>
+    {{BULLETS — pick 4-6 bullets from master resume most relevant to this JD; you may
+      re-emphasize and reword for keyword alignment but NEVER invent facts or metrics}}
+  </ul>
+</div>
+<!-- repeat .entry per role -->
+
+<h2>Projects</h2>
+<div class="entry">
+  <div class="entry-head"><span>{{PROJECT_NAME}}</span><span>{{DATES}}</span></div>
+  <ul>{{BULLETS}}</ul>
+</div>
+<!-- include only the 2-3 projects most relevant to the JD -->
+
+<h2>Education</h2>
+<div class="entry">
+  <div class="entry-head"><span>{{DEGREE}}, {{FIELD}}</span><span>{{DATES}}</span></div>
+  <div class="entry-sub"><span>{{SCHOOL}} | GPA: {{GPA}}</span></div>
+</div>
+
+<h2>Certifications</h2>
+<ul>{{CERTS — keep short, drop if space is needed}}</ul>
+
+</body>
+</html>

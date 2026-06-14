@@ -1,0 +1,6 @@
+id,status,score,title,company,location,remote,salary_min,salary_max,sponsor_risk,date_posted,site,url,description_file,resume_file,applied_date,notes
+demo-001,new,A,AI/ML Engineer,Demo Corp,San Francisco CA,True,110000,150000,NO,2026-06-10,demo,https://example.com/jobs/1,data/descriptions_demo/demo-001.md,,,
+demo-002,new,B,Senior Machine Learning Engineer,Fictional AI Labs,New York NY,True,120000,160000,NO,2026-06-11,demo,https://example.com/jobs/2,data/descriptions_demo/demo-002.md,,,
+demo-003,new,B,Data Engineer,Sample Data Co,Austin TX,False,95000,130000,NO,2026-06-11,demo,https://example.com/jobs/3,data/descriptions_demo/demo-003.md,,,
+demo-004,new,C,MLOps Engineer,Placeholder Systems,Chicago IL,True,100000,140000,YES,2026-06-12,demo,https://example.com/jobs/4,data/descriptions_demo/demo-004.md,,,
+demo-005,new,A,GenAI Application Engineer,Example Ventures,Remote,True,115000,155000,NO,2026-06-12,demo,https://example.com/jobs/5,data/descriptions_demo/demo-005.md,,,
